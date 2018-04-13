@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>Address Book</title>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+</head>
+<body>
+    <!-- Main  / Show all Contacts -->
+    <div data-role="page" id="page-main">
+        <div data-role="header">
+            <h1>Address Book</h1>
+            <a href="#page-add" id="add" data-icon="plus" class="ui-btn-right">Add</a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" id="all-contacts"></ul>
+            <em id="empty">Address book is empty. Click (+) Add to start adding contacts.</em>
+            <button id="clearbutton">Clear all Contacts</button>
+        </div>
+    </div>
+    <!-- Add Contact -->
+    <div data-role="page" id="page-add">
+        <div data-role="header">
+            <h1>Add Contact</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="fieldcontain">
+                <label for="name">Full Name&emsp;&emsp;&emsp;</label>
+                <input type="text" name="name" id="fld-name" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="number">Phone Number&emsp;</label>
+                <input type="tel" name="phone" id="fld-phone" value="" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="email">Email&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                <input type="email" name="email" id="fld-email" />
+            </div>
+            <a href="#page-main" id="btn-save-contact" data-inline="true" data-role="button" data-theme="b" data-direction="reverse">Save</a>
+            <a href="#page-main" data-inline="true" data-role="button" data-direction="reverse">Cancel</a>
+        </div>
+    </div>
+    <!-- View Contact Detail -->
+    <div data-role="page" id="page-view">
+        <div data-role="header">
+            <h1>Contact Details</h1>
+            <a href="#page-main" data-icon="arrow-l" data-direction="reverse">Back</a>
+        </div>
+        <div data-role="content">
+            <div>
+                <b>Name:&emsp;</b>
+                <span id="view-name"></span>
+            </div>
+            <div>
+                <b>Phone:&emsp;</b>
+                <span id="view-phone"></span>
+            </div>
+            <div>
+                <b>Email:&emsp;</b>
+                <span id="view-email"></span>
+            </div>
+        </div>
+        <div>
+            <a href="#page-edit" data-inline="true" data-role="button" id="edit" data-icon="edit">Edit</a>
+            <a href="#page-main" data-inline="true" data-role="button" id="btn-delete-contact" data-icon="delete">Delete</a>
+        </div>
+    </div>
+    <!-- Edit Contact -->
+    <div data-role="page" id="page-edit">
+        <div data-role="header">
+            <h1>Edit Contact Details</h1>
+            <a href="#page-view" data-direction="reverse">Back</a>
+        </div>
+        <!-- <div data-role="header">
+                <h1>Add Contact</h1>
+            </div> -->
+        <div data-role="content">
+            <div data-role="fieldcontain">
+                <label for="name">Full Name&emsp;&emsp;&emsp;</label>
+                <input type="text" name="name" id="fld-edit-name" value="" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="number">Phone Number&emsp;</label>
+                <input type="tel" name="phone" id="fld-edit-phone" value="" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="email">Email&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                <input type="email" name="email" id="fld-edit-email" />
+            </div>
+            <a href="#page-main" id="btn-update-contact" data-inline="true" data-role="button" data-theme="b" data-direction="reverse">Update</a>
+            <a href="#page-main" data-inline="true" data-role="button" data-direction="reverse">Cancel</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
